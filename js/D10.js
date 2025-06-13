@@ -600,11 +600,11 @@ const setLinksRedBackground = function () {
   Scrivi una funzione per aggiungere un nuovo elemento alla lista non ordinata con id "myList".
 */
 
-const addListItem = function() {
+const addListItem = function () {
   const myList = document.getElementById("myList");
 
   const newLi = document.createElement("li");
-  newLi.textContent = "Nuovo elemento"; 
+  newLi.textContent = "Nuovo elemento";
   myList.appendChild(newLi);
 };
 
@@ -612,7 +612,7 @@ const addListItem = function() {
   Scrivi una funzione per svuotare la lista non ordinata con id "myList".
 */
 
-const emptyMyList = function() {
+const emptyMyList = function () {
   const myList = document.getElementById("myList");
   myList.innerHTML = "";
 
@@ -622,11 +622,11 @@ const emptyMyList = function() {
   Scrivi una funzione per aggiungere ad ogni tag <tr> la classe CSS "test"
 */
 
-const addClassToAllTr = function() {
+const addClassToAllTr = function () {
   const allTr = document.getElementsByTagName("tr");
 
   for (let i = 0; i < allTr.length; i++) {
-    allTr[i].classList.add("test"); 
+    allTr[i].classList.add("test");
   }
 };
 
@@ -644,7 +644,16 @@ const addClassToAllTr = function() {
   ***
 
 */
-
+const halfTree = function (n) {
+  for (let i = 1; i <= n; i++) {
+    let tree = '';
+    for (let j = 0; j < i; j++) {
+      tree += '*';
+    }
+    console.log(tree);
+  }
+}
+halfTree(3)
 /* ESERCIZIO 28
   Crea una funzione chiamata "tree" che riceve un numero come parametro e costruisce un albero di "*" (asterischi) dell'altezza fornita.
 
@@ -657,7 +666,29 @@ const addClassToAllTr = function() {
 
 */
 
+const tree = function (n) {
+  for (let i = 0; i < n; i++) {
+    let spaces = ' '.repeat(n - 1 - i);
+    let asterisks = '*'.repeat(2 * i + 1);
+    console.log(spaces + asterisks);
+  }
+}
+tree(3)
+
 /* ESERCIZIO 29
   Crea una funzione chiamata "isItPrime" che riceve un numero come parametro e ritorna true se il numero fornito è un numero primo.
 */
 
+const isItPrime = function (n) {
+  if (n <= 1) { // Minore o uguale a 1 non è primo
+    return false
+  } else if (n === 2) { // Il 2 è l'unico numero pari ad essere numero primo
+    return true
+  } else if (n % 2 === 0) { // Se il numero è pari e maggiore di 2 non è un numero primo
+    return false
+  } else { // Tutti gli altri sono numeri primi 
+    return true
+  }
+}
+
+console.log(isItPrime(4))
